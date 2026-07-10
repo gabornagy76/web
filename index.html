@@ -36,6 +36,7 @@
         <a href="#linkek">Linkek</a>
         <a href="#kepek">Képek</a>
         <a href="#tablazatok">Táblázatok</a>
+        <a href="#urlapok">Űrlapok</a>
     </nav>
 
     <!-- Az oldal fő tartalma -->
@@ -430,6 +431,78 @@
                     <td>Fizika</td>
                 </tr>
             </table>
+        </section>
+
+        <section id="urlapok">
+            <form action="#" method="get">
+                <!-- Az összertozó űrlapelemek konténere -->
+                <fieldset>
+                    <!-- A csoport címét jelöli -->
+                    <legend>Alapadatok</legend>
+                    <!-- Címke egy űrlapmezőhöz, a for attribútummal körjük össze vele -->
+                    <label for="nev">Név:</label>
+                    <!-- Beviteli mező, a type a típusát adja meg -->
+                    <!-- A name az az attribútum, amivel az űrlap elküldi az értéket. -->
+                    <!-- Az id attribútum a label for-jával kötődik össze -->
+                    <!-- required - kötelezően kitöltendő -->
+                    <!-- placeholder - segédszöveg -->
+                    <input type="text" id="nev" name="nev" placeholder="Írd be a neved" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="valami@pelda.hu" required>
+
+                    <label for="jelszo">Jelszó:</label>
+                    <input type="password" name="jelszo" id="jelszo" required minlength="8">
+
+                    <label for="eletkor">Életkor:</label>
+                    <input type="number" name="eletkor" id="eletkor" min="14" max="80">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Választómezők</legend>
+                    <label for="evfolyam">Évfolyam:</label>
+                    <!-- Legördülő lista -->
+                    <!-- Az option elemek a választható lehetőségek -->
+                    <select name="evfolyam" id="evfolyam">
+                        <option value="">Válassz évfolyamot</option>
+                        <option value="9">9. évfolyam</option>
+                        <option value="10">10. évfolyam</option>
+                        <option value="11">11. évfolyam</option>
+                        <option value="12">12. évfolyam</option>
+                        <option value="13">13. évfolyam</option>
+                    </select>
+
+                    <p>Melyik témakör érdekel:</p>
+                    <label>
+                        <input type="radio" name="tema" value="html">
+                        HTML
+                    </label>
+                    <label>
+                        <input type="radio" name="tema" value="css">
+                        CSS
+                    </label>
+                    <label>
+                        <input type="radio" name="tema" value="javascript">
+                        JavaScript
+                    </label>
+
+                    <p>Milyen eszközt használsz a tanuláshoz?</p>
+                    <label>
+                        <input type="checkbox" name="eszkoz" value="telefon">
+                        Telefon
+                    </label>
+                    <label>
+                        <input type="checkbox" name="eszkoz" value="tablet">
+                        Tablet
+                    </label>
+                    <label>
+                        <input type="checkbox" name="eszkoz" value="laptop">
+                        Laptop
+                    </label>
+                </fieldset>
+
+
+            </form>
         </section>
 
     </main>
