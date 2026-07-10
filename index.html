@@ -411,7 +411,7 @@
             <h3>Cellák összevonása</h3>
             <table>
                 <tr>
-                    <th colspan="3">Órarend</th>                    
+                    <th colspan="3">Órarend</th>
                 </tr>
 
                 <tr>
@@ -501,6 +501,43 @@
                     </label>
                 </fieldset>
 
+                <fieldset>
+                    <legend>Egyéb űrlapelemek</legend>
+
+                    <label for="datum">Dátum:</label>
+                    <input type="date" name="datum" id="datum">
+
+                    <label for="ido">Időpont:</label>
+                    <input type="time" name="ido" id="ido">
+
+                    <label for="szin">Kedvenc szín:</label>
+                    <input type="color" name="szin" id="szin">
+
+                    <label for="fajl">Fájl kiválasztása</label>
+                    <input type="file" name="fajl" id="fajl">
+
+                    <!-- Csúszka -->
+                    <label for="ertekeles">Értékelés (1-10 között)</label>
+                    <input type="range" name="ertekeles" id="ertekeles" min="1" max="10" value="3">
+
+                    <label for="uzenet">Üzenet:</label>
+                    <textarea name="uzenet" id="uzenet" rows="5" cols="20"
+                        placeholder="Ide írd az üzenetet..."></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Űralpellenőrzés</legend>
+                    <!-- BÁrmilyen űrlapmezőbe meg lehet adni -->
+                     <label for="irszam">Irányítószám:</label>
+                     <!-- A pattern attribútumban tudjuk megadni, hogy miket fogad el az űrlapmező -->
+                     <input type="text" name="irszam" id="irszam" title="Adj meg pontosan 4 számjegyet" pattern="[0-9]{4}">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Gombok</legend>
+                    <button type="submit">Űrlap elküldése</button>
+                    <button type="reset">Űrlap törlése</button>
+                </fieldset>
 
             </form>
         </section>
