@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML és CSS gyakorlat</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- Az oldal feléce -->
+    <header>
+        <h1>
+            HTML és CSS alapok
+        </h1>
+        <p>
+            Néhány HTML és CSS gyakorlat.
+        </p>
+
+    </header>
+
+    <!-- Navigációs menü -->
+    <nav class="fo-menu">
+        <a href="#bevezetes">Bevezetés</a>
+        <a href="#attributumok">Attribútumok</a>
+        <a href="#szelektorok">Szelektorok</a>
+        <a href="#css-alapok">CSS alapok</a>
+        <a href="#dobozmodell">CSS dobozmodell</a>
+        <a href="#cimsorok">Cimsorok</a>
+        <a href="#listak">Listák</a>
+        <a href="#linkek">Linkek</a>
+        <a href="#kepek">Képek</a>
+        <a href="#tablazatok">Táblázatok</a>
+    </nav>
+
+    <!-- Az oldal fő tartalma -->
+    <main>
+        <!-- Az id="" attribútum egy egyedi azonosító. Akkor használjuk, ha egy konkrét, egyedi elemet akarunk azonosítani.
+         Erre hivatkozik a fentebbi, navigációban megadott link. -->
+        <section id="bevezetes">
+            <h2>Bevezetés a HTML világába</h2>
+            <p>
+                A HTML (Hypertext Markup Language), a weboldalak szerkezetének leírására szolgáló jelölőnyelv.
+                Nem programozási nyelv, nem futtat algoritmusokat, nem végez számításokaat, hanem megjelöli az oldal
+                tartalmi elemeit.
+            </p>
+            <p class="kiemelt">
+                A HTML a weboldal váza, a CSS a megjelnítésért felel.
+            </p>
+        </section>
+
+        <section id="attributumok">
+            <h2>HTML attributumok</h2>
+            <p>
+                A HTML elemekhez gyakran rendelünk attribútumokat. Ezek kiegészítő információt adnak az elemhez, mindig
+                a nyitó <code>tag</code>-ben írjuk őket.
+            </p>
+            <p class="kiemelt">
+                Például egy linknél a <code>href</code> attribútum értéke egy hivatkozás.
+            </p>
+            <p class="pelda-doboz">
+                <a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">MDN Web Docs
+                    megnyitása</a>
+            </p>
+        </section>
+
+        <section id="szelektorok">
+            <h2>Az <code>id</code> és a <code>class</code> szerepe</h2>
+
+            <p>
+                Az <code>id</code> és a <code>class</code> a leggyakrabban használt szelektrok, arra szolgálnak, hogy
+                egy HTML elemet meg tudjunk jelölni.
+            </p>
+
+            <h3>Id - egyedi azonosító</h3>
+            <p>
+                Az egyedi azonosítót egy oldalon csak egyszer használjuk.
+                Akkor hasznos, ha egy konkrét, egyedi elemre akarunk hivatkozni.
+            </p>
+            <p class="pelda-doboz">
+                Ennek a szakasznak az egyedi azonosítója a <code>szelektorok</code>. Ezért a navigációból a
+                <code>href="#szelektorok"</code> hivatkozással tudunk ide ugrani.
+            </p>
+
+            <h3>Class - újrahasználható csoportosító azonosító</h3>
+            <p>
+                A <code>class</code> nem egyedi, több HTML elem is kaphatja ugyanazt a a class értéket.
+            </p>
+
+        </section>
+
+        <section id="css-alapok">
+            <h2>CSS alapok</h2>
+            <p>
+                A CSS a HTM elemek megjelenését szabályozza. CSS-el állíthatnunk például színeket, betűtípusokat,
+                margót, belső margót, szegélyeket, méreteket és szabályozhatjuk az elemek egymáshoz képesti
+                elrendezését.
+            </p>
+            <h3>Elemkijelölők</h3>
+            <p>
+                Ha CSS-ben egyszerűen a HTML tag nevét írjuk, akkor az az összes ilyen jelölővel rendelkező elemre
+                vonatkozni fog.
+            </p>
+            <p class="pelda-doboz">
+                <code>p</code> - az összes bekezdésre vonatkozik.
+                <br>
+                <code>h2</code> - az összes kettes szintű címsorra vonatkozik.
+            </p>
+            <h3>Class kijelölő</h3>
+            <p>
+                CSS-ben ha ponttal kezdünk egy kijelölőnevet, <code>.pelda-doboz</code>, akkor az összes olyan elemet
+                kijelöljük, amelynek <code>class="pelda-doboz"</code> attribútuma van.
+            </p>
+            <h3>ID kijelölő</h3>
+            <p>
+                CSS-ben ha kettőskereszttel kezdünk egy kijelölőnevet, <code>#css-alapok</code>, akkor azt az egyetlen
+                elemet jelöljük, amelynek <code>id="css-alapok"</code> attribútuma van.
+            </p>
+            <h3>Leszármazott kijelölő</h3>
+            <p>
+                A <code>.fo-menu a</code> kijelölő azt jelenti, hogy azokat a linkeket (a) formázzuk, amelyek a
+                <code>class="fo-menu"</code> attribútummal ellátott elem belsejében találhatóak.
+            </p>
+        </section>
+
+        <section id="dobozmodell">
+            <h2>CSS dobozmodell</h2>
+            <p>
+                A CSS Box Model a webdesign egyik alapvető koncepciója.
+                lényege, hogy a böngésző minden egyes HTML elemet egy négyszögletes dobozként kezel. <br>
+                Ezen dobozok tulajdonságai határozzák meg az elemek méretét és a köztük lévő távolságokat is.
+            </p>
+            <ul>
+                <li>
+                    A <code>content</code> maga a tartalom, szöveg vagy kép, a tényleges tartalom. A méretét a width és
+                    height tulajdonságokka lehet szabályzoni.
+                </li>
+                <li>
+                    A <code>padding</code> a tartalom és a szegély közötti belső térköz. Növeli a doboz belső terét.
+                </li>
+                <li>
+                    A <code>border</code> az elem szegélye. A belső tartalmat és a belső térközt veszi körbe. Lehet neki
+                    színt, vastagságot és stílust adni. Ez a doboz látható széle.
+                </li>
+                <li>
+                    A <code>margin</code> az elem külső margója, vagyis a többi elemtől való távolsága. A külső margó
+                    nem része a doboz kattintható felületének.
+                </li>
+                <p>
+                    Alapesetben a doboz méretét a szélessége <b>(pl. 300px)</b>, belső margója <b>(pl. 20px)</b> és
+                    szegélye <b>(pl. 2px)</b> határozza meg. Ha ezek közül bármelyik változik a működés vagy fejlesztés
+                    során, akkor a teljes dobozméret <b>(300+20+20+2+2=344)</b> is változik.
+                    A <code>border-box: box-sizing;</code> beállítás megváltoztatja ezt a működést. Ha 300px a doboz
+                    szélessége, akkor az ennyi marad akkor is, ha belső margót és szegélyt is adunk hozzá. Ebben az
+                    esetben a szegély és belső margó befelé fog növekedni.
+                </p>
+            </ul>
+        </section>
+
+        <section id="cimsorok">
+            <h2>Címsorok</h2>
+
+            <p>
+                A HTML-ben hat címsor van előre definiálva.
+                <code>h1 - h6</code>
+                A <code>h1</code> a legfontosabb, a <code>h6</code> a legkevésbé fontos címsor.
+            </p>
+            <p>
+                Egy oldalon általában egy fő <code>h1</code> címsort használunk.
+                Az alfejezetekhez pedig értelemszerűen kiosztjuk a megfelelő címsorokat.
+            </p>
+
+            <h2>Szövegek és bekezdések</h2>
+            <p>
+                Az egyszerű bekezdéseket html-ben a <code>p</code> elemmel látjuk el.
+            </p>
+            <p>
+                Ez egy új bekezdés, automatikusan új sorba tördel és az alapértelmezett bekezdéstávolságokkal lesz
+                ellátva. <br>
+                A bekezdésen belüli sortörést a <code>br</code> HTML elemmel tudjuk elvégezni.
+            </p>
+            <p>
+                A <strong>strong elem</strong> kiemelt, fontosabb szöveget jelöl.
+                A böngésző általában félkövér stílusban jeleníti meg. <br>
+                Az <em>em elem</em> hansúlyos szöveget jelöl.
+                A böngésző általában <i>dőlt</i> stílusban jeleníti meg.
+                <br>
+                Az <mark>mark elem</mark> kiemelt szöveget jelöl.
+                <br>
+                Alsó index jelölése a <code>sub</code> elemmel: H<sub>2</sub>O
+                <br>
+                Felső index jelölése a <code>sup</code> elemmel: a<sup>2</sup>+b<sup>2</sup>=c<sup>2</sup>
+                <br>
+            <blockquote>
+                Ez egy hosszabb idézet, amelyet a blockquote elem jelöl.
+            </blockquote>
+            Rövid idézetekhez a <q>q elemet</q> használjuk.
+            <br>
+            A <abbr title="Hypertext Markup Language">HTML</abbr> rövidítés fölé vitt egérmutató megmutatja a teljes
+            jelentést.
+            </p>
+        </section>
+
+        <section id="listak">
+            <h2>Listák</h2>
+            <p>
+                Több összetartozó elem felsorolása. <br>
+                Használhatunk rendezett és rendezetlen listákat.
+            </p>
+            <h3>Rendezetlen listák</h3>
+            <p>
+                A felsorlást <code>ul</code> tagek közé hozzk létre <code>li</code> gyermekekkel.
+            </p>
+            <ul>
+                <li>Kenyér</li>
+                <li>Zsemle</li>
+                <li>Sajt</li>
+                <li>Kóla</li>
+            </ul>
+
+            <h3>Rendezett listák</h3>
+            <p>
+
+                A felsorlást <code>ol</code> tagek közé hozzk létre <code>li</code> gyermekekkel.
+                Gyakori atrribútumai a <br>
+                <code>type</code> amely meghatározza a lista tipsát (arab, római, betű, stb.) <br>
+                <code>start</code> amely a kezdőértéket. <br>
+                <code>reversed</code> amely fordított sorrendben listázza az elemeket.
+            </p>
+
+            <ol type="I" start="2">
+                <li>Hozzunk létre egy HTML fájlt</li>
+                <li>Írjuk meg az alapvázat</li>
+                <li>Adjunk hozzá tartalmat</li>
+                <li>Lássuk el stílusokkal</li>
+            </ol>
+
+            <h3>Beágyazott listák</h3>
+            <p>
+                A listaelemek allistáit hozhatjuk létre ezzel.
+            </p>
+
+            <ol>
+                <li>
+                    HTML elemek
+                    <ul>
+                        <li>Címsor</li>
+                        <li>Bekezdés</li>
+                        <li>Lista</li>
+                    </ul>
+                </li>
+                <li>
+                    CSS elemek
+                    <ol>
+                        <li>Kijelölő</li>
+                        <li>Tulajdonság</li>
+                        <li>Érték</li>
+                    </ol>
+                </li>
+            </ol>
+
+            <h3>Definíciós lista</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>A weboldal szerkezetét leíró jelölőnyelv</dd>
+                <dt>CSS</dt>
+                <dd>A weboldal megjelenését szabályozó stílusnyelv</dd>
+                <dt>Attribútum</dt>
+                <dd>Egy HTML elemheez tartozó kiegészítő információ</dd>
+            </dl>
+        </section>
+
+        <section id="linkek">
+            <h2>Hivatkozások</h2>
+            <p>
+                Linkeket egy <code>a</code> elemmel hozunk létre. Kötelező attributuma a <code>href=""</code>, a mely a
+                link címét tartalmazza.
+            </p>
+            <h3>Külső link:</h3>
+            <p class="pelda-doboz">
+                <a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">MDN Web Docs
+                    megnyitása</a>
+            </p>
+            <h3>Belső link</h3>
+            <p class="pelda-doboz">
+                <a href="#cimsorok">Címsorok</a>
+            </p>
+            <h3>E-mail link</h3>
+            <p class="pelda-doboz">
+                <a href="mailto:pelda@example.com">E-mail küldése</a>
+            </p>
+            <h3>Telefonos link</h3>
+            <p class="pelda-doboz">
+                <a href="tel:+36123456789">Telefonhívás indítása</a>
+            </p>
+        </section>
+
+        <section id="kepek">
+            <h2>Képek</h2>
+            <p>
+                Képet az <code>img</code> elemmel szúrunk be.
+                Fontos attributumai:
+            <ul>
+                <li><code>src</code> - a kép elérési útja</li>
+                <li><code>alt</code> - a kép szöveges leírása</li>
+                <li><code>title</code> - lebegő tooltip</li>
+                <li><code>width</code> - a kép szélessége</li>
+                <li><code>height</code> - a kép magassága</li>
+            </ul>
+            </p>
+            <p>
+                Példaképeket lorem picsum oldalról tudunk linkelni. <br>
+                <code>src="https://picsum.photos/300/400"</code>
+            </p>
+            <img src="https://picsum.photos/300/400" alt="Példakép" title="Példakép">
+
+            <figure>
+                <img src="https://picsum.photos/100/200" alt="Másik kép">
+            </figure>
+            <figcaption>
+                Ez egy képaláírás, amely a <code>figure</code> elemhez tartozik
+            </figcaption>
+        </section>
+
+        <section id="tablazatok">
+            <h2>Táblázatok</h2>
+            <p>
+                Táblázatokat adatok rendezéséhez használhatunk ebben az esetben is.
+                A <code>table</code> elemmel kezdődik és jellemző gyermekelemei:
+            <ul>
+                <li>Sorok - <code>tr</code></li>
+                <li>Cellák - <code>td</code> és <code>th</code></li>
+            </ul>
+            </p>
+            <h3>Egyszerű táblázat</h3>
+            <table>
+                <tr style="background-color: gold;">
+                    <th>Név</th>
+                    <th>Tantárgy</th>
+                    <th>Jegy</th>
+                </tr>
+                <tr>
+                    <td>Kiss Anna</td>
+                    <td>Matematika</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Nagy Béla</td>
+                    <td>Fizika</td>
+                    <td>3</td>
+                </tr>
+            </table>
+
+            <table>
+                <caption>
+                    Tanulói eredmények összesítése
+                </caption>
+                <thead>
+                    <tr>
+                        <th>Tanuló</th>
+                        <th>Matematika</th>
+                        <th>Magyar</th>
+                        <th>Digitális kultúra</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Kiss Anna</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+
+                    <tr>
+                        <td>nagy Béla</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>4</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tóth Csilla</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                    </tr>
+
+                    <tr>
+                        <td>Barna Ödön</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <th>Átlag</th>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                </tfoot>
+            </table>
+
+            <h3>Cellák összevonása</h3>
+            <table>
+                <tr>
+                    <th colspan="3">Órarend</th>                    
+                </tr>
+
+                <tr>
+                    <td>Nap</td>
+                    <td>Óra</td>
+                    <td>Tantárgy</td>
+                </tr>
+
+                <tr>
+                    <td rowspan="2">Hétfő</td>
+                    <td>1. óra</td>
+                    <td>Matematika</td>
+                </tr>
+
+                <tr>
+                    <td>2. óra</td>
+                    <td>Fizika</td>
+                </tr>
+            </table>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
